@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link, useLocation } from 'react-router-dom';
 
 const HeaderContainer = styled.header`
   display: flex;
@@ -16,10 +17,11 @@ const HeaderContainer = styled.header`
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 `;
 
-const Logo = styled.div`
+const Logo = styled(Link)`
   font-size: 1.8rem;
   font-weight: 700;
   color: #4cc9f0;
+  text-decoration: none;
 `;
 
 const Nav = styled.nav`
@@ -31,7 +33,7 @@ const Nav = styled.nav`
   }
 `;
 
-const NavLink = styled.a`
+const NavLink = styled(Link)`
   color: #fff;
   text-decoration: none;
   font-size: 1rem;
@@ -58,14 +60,23 @@ const MobileMenuButton = styled.button`
 `;
 
 const Header: React.FC = () => {
+  const location = useLocation();
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <HeaderContainer>
-      <Logo>JK</Logo>
+      <Logo to="/">JK</Logo>
       <Nav>
-        <NavLink href="/">Home</NavLink>
-        <NavLink href="#about">About</NavLink>
-        <NavLink href="#experience">Experience</NavLink>
-        <NavLink href="#projects">Projects</NavLink>
+        <NavLink to="/" onClick={() => scrollToSection('home')}>Home</NavLink>
+        <NavLink to="/#about" onClick={() => scrollToSection('about')}>About</NavLink>
+        <NavLink to="/#experience" onClick={() => scrollToSection('experience')}>Experience</NavLink>
+        <NavLink to="/#projects" onClick={() => scrollToSection('projects')}>Projects</NavLink>
       </Nav>
       <MobileMenuButton>☰</MobileMenuButton>
     </HeaderContainer>

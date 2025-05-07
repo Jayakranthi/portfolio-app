@@ -280,11 +280,11 @@ const Hero: React.FC = () => {
         </NameWrapper>
         
         <Title>
-          <span>Senior Front End Engineer</span>
+          <span>Senior Software Engineer</span>
         </Title>
         
         <Summary>
-          A passionate and highly skilled Senior Front End Engineer with 10+ years of experience in designing and developing clean, efficient, and intuitive web applications.
+          A passionate and highly skilled Senior Software Engineer with 10+ years of experience in designing and developing clean, efficient, and intuitive web applications.
         </Summary>
         
         <ContactLinks>

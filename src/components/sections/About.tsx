@@ -134,7 +134,7 @@ const About: React.FC = () => {
         <SectionTitle>About Me</SectionTitle>
         <AboutCard>
           <AboutText>
-            I am a <strong>Senior Front End Engineer</strong> with over 10 years of experience in designing and developing web applications.
+            I am a <strong>Senior Software Engineer</strong> with over 10 years of experience in designing and developing web applications.
             I specialize in creating <strong>clean, efficient, and intuitive</strong> user interfaces using modern technologies like <strong>React,
             TypeScript, and Redux</strong>.
             <br /><br />
